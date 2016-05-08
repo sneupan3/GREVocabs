@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRE VOCABS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pt-Lg-zQJ">
+                                <rect key="frame" x="42" y="197" width="516" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="heG-dl-Kq8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An Effective Learning Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-HZ-Zyp">
+                                <rect key="frame" x="42" y="277" width="516" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ewo-Qg-8ib"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright US .INC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeo-lp-SUk">
+                                <rect key="frame" x="29" y="550" width="516" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Pt-Lg-zQJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="22" id="2Gy-PX-kbS"/>
+                            <constraint firstItem="5Pt-Lg-zQJ" firstAttribute="trailing" secondItem="eEk-HZ-Zyp" secondAttribute="trailing" id="2be-Ud-E3C"/>
+                            <constraint firstItem="5Pt-Lg-zQJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Hs5-39-QDi"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qeo-lp-SUk" secondAttribute="bottom" constant="29" id="I0q-Bf-z4h"/>
+                            <constraint firstItem="5Pt-Lg-zQJ" firstAttribute="leading" secondItem="eEk-HZ-Zyp" secondAttribute="leading" id="Xif-Ug-A1C"/>
+                            <constraint firstItem="qeo-lp-SUk" firstAttribute="centerX" secondItem="5Pt-Lg-zQJ" secondAttribute="centerX" constant="-13" id="fwA-b6-XqW"/>
+                            <constraint firstItem="5Pt-Lg-zQJ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="177" id="h8R-LF-BF2"/>
+                            <constraint firstItem="eEk-HZ-Zyp" firstAttribute="top" secondItem="5Pt-Lg-zQJ" secondAttribute="bottom" constant="18" id="rMd-GI-WeD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>

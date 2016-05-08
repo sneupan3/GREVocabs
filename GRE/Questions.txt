@@ -1,0 +1,38 @@
+aberrant : deviating : Easy
+abscond : leave secretly : Easy
+advocate : speak, plead : Easy
+anachronism : non chronological : Easy
+antipathy : hostility : Easy
+aver : declare : Medium
+burgeon : flourish : Medium
+corporeal : tangible : Medium
+descry : make clear : Medium
+enervate : weaken : Medium
+fledgling : baby bird : Hard
+floundering : struggling : Hard
+gossamer : fine fabric : Hard
+hapless : unfortunate : Hard
+inchoate : incomplete : Hard
+strive:to struggle:Easyadorn:add beauty:Easyabhor:to hate:Easy
+shard:broken pottery:Easychisel:tool for shaping materials:Easyencapsulate:enclose in capsule:Easycomplaisant:obliging:Easygrievous:serious dire grave:Easyhypocrisy:falsely appearing good:Easyenzyme:catalyst:Easyeradicate:get rid of pull:Easyinfuriate:fill with fury:EasyLambaste:attack verbally:Easysanction:approval penalty:Easyengulf:swallow up:Easyeuphoria:state of excitement:Easyrenowned:celebrated:Easycolloquial:involving:Easyevoke:bring out:Easymischievous:harmful:Easyimplicit:implied though:Easyabysmal:extreme bad:Easydote:fondness center attention:Easyriddle:puzzling:Easymisogynist:who hates women:Easydisproof:proof to the contrary:Easysadastic:Cruel:Easyimpromptu:without preparation:Easyinclined:directing the mind:Easy erratic:irregular in behaviour:Easymeticulous:attention to details:Easyambivalent:contrary meanings:Easypertain:belong as a part have reference:Easyauxiliary:helping:Easyconstrict:make tight:Easyluminary:star:Easyossified:turned to bone:Easytonic:something giving strength:Easyperish:be destroyed decay:Easypresentiment:premonition:Easyindistinct:not easily heard:Easydupe:cheat make a fool of:Easyabstruse:obscure:Easyturbulence:being uncontrollably violent:Easyconnoisseur:a person with good judgement:Easyaberration:straying away from normal:Easyextralegal:outside the law:Easypest:destructive thing:Easy sophisticated:complex:Easyail:to cause pain:Easylimp:lacking strength:Easyarcane:known:Easymite:A very small amount:Easyedify:instruct:Easysatiate:satisfy fully:Easyyeoman:middle-class:Easy
+fidelity:loyalty accuracy:Easy
+gullible:easily gulled:Easy
+writ:written order:Easy
+mesmerize:hypnotize:Easy
+equilibrium:balanced:Medium
+aggravate:irritate:Medium
+introspection:examining thoughts:Medium
+philanthropist:who loves mankind:Mediumantidote:medicine against a poison:Medium
+ambiguous:uncertain:Medium
+vivacious:lively high-spirited:Mediumbeguile:mislead:Medium foolproof:incapable of error:Mediumliberality:free giving:Mediumbrass:mixing copper and zinc:Mediummalleable:adapting:Mediumsuffice:be enough:Mediumlampoon:publicly mock:Mediumimmutable:cannot be changed:Mediumforgery:counterfeit:Mediumcordial:warm and sincere:Mediumretrograde:receding:Mediumcumbersome:burdensome:Mediumrepel:refuse to accept:Mediumunscathed:unharmed unhurt:Mediumboisterous:noisy:Mediumimplosion:collapse:Mediumknit:draw together:Mediumenigma:something puzzling:Mediumbuoyant:able to float:Mediumjabber:talk excitedly:Mediumtreacherous:not to be trusted:Mediumbewilder:puzzle:Mediumstride:long steps:Mediumgarrulous:too talkative:Mediumimpede:hinder:Mediumresuscitation:back to consciousness:Mediumapartheid:brutal racial discrimination:Mediumindulgent:inclined to indulge:Mediumwoo:try to win:Mediummisanthrope:who hates mankind:Mediumevasive:tending to evade:Mediumeulogy:formal praise panegyric:Mediumfoster:care for:Mediumpilferer:to steal:Mediumrefine:become pure cultural:Mediumdexterity:skill:Mediumbogus:not genuine:Mediumincongruous:out of place:Medium
+multifarious:greatly diversified:Mediumskit:humorous writing:Mediumrepulsive:feeling of disgust:Mediumhapless:unlucky:Mediumconvoluted:complicated:Mediumindefatigability:not easily exhaustible:Mediumfawn:To seek favor:Mediumwince:show bodily:Medium cognizant:fully aware of:Mediumsubstantiation:giving facts to support:Mediumeuthanasia:painless death:Mediumirate:angry:Mediumalcove:partially enclosed place:Mediumfrantic:wildly excited with joy:Mediumdecree:order by authority:Mediumvaliant:brave:Hardderogatory:insulting:Hard
+tarnished:lost brightness:Hard
+irrevocable:final and unalterable:Hardsoggy:heavy with water:Hard
+vindictive:desire to revenge:Hardwanton:willfully malicious:Hard
+ambidextrous:able to use both hands:Hardretrospective:Looking on past:Hardprecursors:a person that precedes:Hardintrovert:turning towards oneself:Hardgerontocracy:old people ruling government:Hard
+braggart:boastful:Hardentice:attract:Hardalleviate:make (pain) bearable:Hard
+earthenware:dishes made of clay:Hardunearth:bring to light:Hardsavor:taste flavor something:Hardvitriolic:sarcastic:Hardloquacious:talkative:Harddefiance:open disobedience:Hardcandid:straight-forward:Hardwarmonger:who stirs up war:Hardgust:outburst of feeling:Hardcoalescing:coming together:Hard precursory:preliminary:Hardcounterfeit:forgery:Hardgush:burst out suddenly:Hardquandary:state of doubt:Hard chortle:chuckle of pleasure:Hardrevere:deep respect for:Hardswerve:change direction suddenly:Hardabraded:rubbed off:Hardpunitive:Punishing:Hardnoxious:harmful:Hardtorment:severe pain:Hardsquander:spend wastefully:Hardstifled:kept back:Hardantithetical:direct opposing:Harddeplete:use until none remains:Hardapropos:by the way:Hard
+lament:feeling of sorrow:Hardprovoke:make angry vax:Hardplummet:fall plunge steeply:Hardaccrue:accumulate:Hardidolatry:excessive admiration of:Hard
+valorous:brave:Hardillicit:unlawful:Hardviscous:semi-fluid:Hardaversion:strong dislike:Hardhaughty:arrogant:Hardconcord:agreement:Hardlatent:developed:Hardtopple:be unsteady and overturn:Hardsupersede:take the place of:Hardentangle:put into difficulties:Hard
+floe:floating ice:Hardmalevolence:wishing to do evil:Hardprevalent:common:Hard
+aloof:reserved:Hard
