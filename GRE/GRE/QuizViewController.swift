@@ -26,7 +26,7 @@ class QuizViewController: UIViewController, ModelDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        answerLabel.hidden = true
+        answerLabel.isHidden = true
         model = Model(delegate: self)
         settingsChanged()
     }
@@ -47,19 +47,19 @@ class QuizViewController: UIViewController, ModelDelegate{
     func nextQuestion(){
         
 
-        answerLabel.hidden = true
+        answerLabel.isHidden = true
         allQuestionsAnswers = model.allQuestionsAndAnswers
         questionNumberLabel.text = String(format: "Question %1$d of %2$d",
                                           (correctGuesses + 1), model.numberOfQuestions)
         if(enabledQuestions.count > 1){
-            let currentQuestion =  allQuestions.removeAtIndex(0)
+            let currentQuestion =  allQuestions.remove(at: 0)
             questionLabel.text = currentQuestion
             let correctAnswer = allQuestionsAnswers[questionLabel.text!]
             for buttons in buttonControls{
-                buttons.enabled = true
+                buttons.isEnabled = true
             }
             for button in buttonControls{
-                button.enabled = true
+                button.isEnabled = true
             }
             
             
@@ -75,13 +75,13 @@ class QuizViewController: UIViewController, ModelDelegate{
             var i = 0;
             
             for button in buttonControls{
-                button.setTitle(set.popFirst() ,forState: .Normal)
+                button.setTitle(set.popFirst() ,for: .normal)
                     i += 1
             }
             
             if(!set.contains(correctAnswer!)){
                 let randomVal = Int(arc4random_uniform(UInt32(4)))
-                buttonControls[randomVal].setTitle(correctAnswer, forState: .Normal)
+                buttonControls[randomVal].setTitle(correctAnswer, for: .normal)
             }
         }
     }
@@ -97,31 +97,35 @@ class QuizViewController: UIViewController, ModelDelegate{
         totalGuesses += 1
         
         if(guess != correct){
-            sender.enabled = false
-            answerLabel.hidden = false
-            answerLabel.textColor = UIColor.redColor()
+            sender.isEnabled = false
+            answerLabel.isHidden = false
+            answerLabel.textColor = UIColor.red
             answerLabel.text = "Incorrect"
         }else{
-            answerLabel.hidden = false
-            answerLabel.textColor = UIColor.greenColor()
+            answerLabel.isHidden = false
+            answerLabel.textColor = UIColor.green
             answerLabel.text = "Correct"
             
             correctGuesses += 1
             
             for buttons in buttonControls{
-                buttons.enabled = false
+                buttons.isEnabled = false
             }
             
             if(correctGuesses == model.numberOfQuestions){
                 results()
             }else{
-                dispatch_after(
-                    dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), // delay time
-                    dispatch_get_main_queue(),
-                    {
-                        self.nextQuestion()
-                    }
-                )
+                let deadlineTime = DispatchTime.now() + .seconds(1);                DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                    self.nextQuestion()
+                }
+                
+//                dispatch_after(
+//                    DispatchTime.now(dispatch_time_t(DISPATCH_TIME_NOW), Int64(1 * NSEC_PER_SEC)), // delay time
+//                    DispatchQueue.main,
+//                    {
+//                        self.nextQuestion()
+//                    }
+                //)
             }
             
         }
@@ -129,29 +133,29 @@ class QuizViewController: UIViewController, ModelDelegate{
     
     func results(){
         
-        
-        let percentString = NSNumberFormatter.localizedStringFromNumber(
-            Double(correctGuesses) / Double(totalGuesses),
-            numberStyle: NSNumberFormatterStyle.PercentStyle)
-        
+        let result = NSNumber(value: correctGuesses / totalGuesses)
+        let percentString = NumberFormatter.localizedString(
+            from: result,
+            number: NumberFormatter.Style.percent
+        )
         let alertController = UIAlertController(title: "Results",
                                                 message: String(format: "%1$i attempts, %2$@ correct",
                                                     totalGuesses, percentString),
-                                                preferredStyle: UIAlertControllerStyle.Alert)
+                                                preferredStyle: UIAlertControllerStyle.alert)
         let newQuizAction = UIAlertAction(title: "New Quiz",
-                                          style: UIAlertActionStyle.Default,
+                                          style: UIAlertActionStyle.default,
                                           handler: {(action) in self.resetQuiz()})
         alertController.addAction(newQuizAction)
-        presentViewController(alertController, animated: true,
+        present(alertController, animated: true,
                               completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue,
+    func prepareForSegue(segue: UIStoryboardSegue,
                                   sender: AnyObject?) {
         
         if segue.identifier == "settingsOption" {
             let controller =
-                segue.destinationViewController as! SettingsViewController
+                segue.destination as! SettingsViewController
             controller.model = model
         }
     }

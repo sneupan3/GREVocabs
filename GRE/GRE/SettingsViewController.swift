@@ -14,16 +14,16 @@ class SettingsViewController: UIViewController {
     @IBOutlet var numberOfQuestions: UITextField!
     
     var model: Model!
-    private var quizLevels = ["Easy" , "Medium", "Hard"]
-    private var settingsChanged = false
-    private var defaultLevel = 0
+    fileprivate var quizLevels = ["Easy" , "Medium", "Hard"]
+    fileprivate var settingsChanged = false
+    fileprivate var defaultLevel = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        numberOfQuestions.keyboardType = UIKeyboardType.NumberPad
+        numberOfQuestions.keyboardType = UIKeyboardType.numberPad
         
         for i in 0 ..< switches.count {
-            switches[i].on = model.levels[quizLevels[i]]!
+            switches[i].isOn = model.levels[quizLevels[i]]!
         }
         
         numberOfQuestions.placeholder = String(model.numberOfQuestions)
@@ -44,7 +44,7 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func questionsChanged(sender: AnyObject) {
+    @IBAction func questionsChanged(_ sender: AnyObject) {
         if(Int(sender.text) == nil){
              model.changeNumberOfQuestions(10)
         
@@ -56,7 +56,7 @@ class SettingsViewController: UIViewController {
         
     }
     
-    @IBAction func switchesChanged(sender: AnyObject) {
+    @IBAction func switchesChanged(_ sender: AnyObject) {
         for i in 0 ..< switches.count {
             if sender === switches[i] {
                 model.toggleLevels(quizLevels[i])
@@ -67,7 +67,7 @@ class SettingsViewController: UIViewController {
         if Array(model.levels.values).filter({$0 == true}).count == 0 {
             
             model.toggleLevels(quizLevels[defaultLevel])
-            switches[defaultLevel].on = true
+            switches[defaultLevel].isOn = true
             displayErrorDialog()
         }
         
@@ -79,18 +79,18 @@ class SettingsViewController: UIViewController {
             title: "At Least One Region Required",
             message: String(format: "Selecting %@ as the default region.",
                 quizLevels[defaultLevel]),
-            preferredStyle: UIAlertControllerStyle.Alert)
+            preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title: "OK",
-                                     style: UIAlertActionStyle.Cancel, handler: nil)
+                                     style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(okAction)
         
-        presentViewController(alertController, animated: true,
+        present(alertController, animated: true,
                               completion: nil)
     }
     
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         if settingsChanged {
             model.notifyDelegate() //  if settings changed
         }

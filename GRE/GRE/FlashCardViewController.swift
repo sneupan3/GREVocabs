@@ -13,32 +13,32 @@ class FlashCardViewController: UIViewController {
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var buttonLabel: UIButton!
     @IBOutlet var nextButton: UIButton!
-    private var allQuestionsAnswers: [String:String] = [:]
-    private var questions: [String] = []
-    private var currentQuestion: String = ""
+    fileprivate var allQuestionsAnswers: [String:String] = [:]
+    fileprivate var questions: [String] = []
+    fileprivate var currentQuestion: String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.hidden = true
+        nextButton.isHidden = true
         initialize()
     }
     
     func initialize(){
         
     
-        let filepaths =  NSBundle.mainBundle().pathsForResourcesOfType(
-            "txt", inDirectory: nil)
+        let filepaths =  Bundle.main.paths(
+            forResourcesOfType: "txt", inDirectory: nil)
         
         for filepath in filepaths{
             
             do {
                 let contents = try NSString(contentsOfFile: filepath, usedEncoding: nil) as String
                 
-                let myStrings = contents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+                let myStrings = contents.components(separatedBy: CharacterSet.newlines)
                 
                 for string in myStrings{
-                    let newString = string.componentsSeparatedByString(":")
+                    let newString = string.components(separatedBy: ":")
                     allQuestionsAnswers[newString[0]] = newString[1];
                     questions.append(newString[0])
                 }
@@ -47,7 +47,7 @@ class FlashCardViewController: UIViewController {
             }
         }
         
-        buttonLabel.hidden = false
+        buttonLabel.isHidden = false
         let randomVal = Int(arc4random_uniform(UInt32(questions.count)))
         currentQuestion = questions[randomVal]
         questionLabel.text = currentQuestion
@@ -55,7 +55,7 @@ class FlashCardViewController: UIViewController {
     }
     
     func nextQuestion(){
-        buttonLabel.hidden = false
+        buttonLabel.isHidden = false
         let randomVal = Int(arc4random_uniform(UInt32(questions.count)))
         currentQuestion = questions[randomVal]
         questionLabel.text = currentQuestion
@@ -66,11 +66,11 @@ class FlashCardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonPressed(sender: AnyObject) {
+    @IBAction func buttonPressed(_ sender: AnyObject) {
 
-        buttonLabel.hidden = true
+        buttonLabel.isHidden = true
     
-        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.questionLabel.alpha = 0.0
             }, completion: {
                 (finished: Bool) -> Void in
@@ -79,15 +79,15 @@ class FlashCardViewController: UIViewController {
                 self.questionLabel.text = self.allQuestionsAnswers[self.currentQuestion]
                 
                 // Fade in
-                UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                     self.questionLabel.alpha = 1.0
                     }, completion: nil)
         })
-        nextButton.hidden = false
+        nextButton.isHidden = false
     }
 
-    @IBAction func nextButtonAction(sender: AnyObject) {
-        nextButton.hidden = true
+    @IBAction func nextButtonAction(_ sender: AnyObject) {
+        nextButton.isHidden = true
         self.nextQuestion()
 
     }

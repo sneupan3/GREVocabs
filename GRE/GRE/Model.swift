@@ -16,48 +16,48 @@ protocol ModelDelegate {
 
 class Model{
 
-    private var difficultyKey = "difficulty"
-    private var numOfQuestions = "questions"
+    fileprivate var difficultyKey = "difficulty"
+    fileprivate var numOfQuestions = "questions"
     
-    private var delegate: ModelDelegate! = nil
+    fileprivate var delegate: ModelDelegate! = nil
     
-    private var difficultyLevels = ["Easy" : true, "Medium": false , "Hard": false]
+    fileprivate var difficultyLevels = ["Easy" : true, "Medium": false , "Hard": false]
     var numberOfQuestions = 4
     
-    private var allQuestionsAnswers: [String:String] = [:]
-    private var currentLevelQuestions: [String] = []
-    private var allQuestions: [String] = []
-    private var allFiles: [String] = []
+    fileprivate var allQuestionsAnswers: [String:String] = [:]
+    fileprivate var currentLevelQuestions: [String] = []
+    fileprivate var allQuestions: [String] = []
+    fileprivate var allFiles: [String] = []
     
     
     init(delegate: ModelDelegate){
         self.delegate = delegate
       
         
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = UserDefaults.standard
         
-        if let tempDifficulty = userDefaults.dictionaryForKey(difficultyKey){
+        if let tempDifficulty = userDefaults.dictionary(forKey: difficultyKey){
             self.difficultyLevels = tempDifficulty as! [String : Bool]
         }
         
-        let tempNumberOfQuestions = userDefaults.integerForKey(numOfQuestions)
+        let tempNumberOfQuestions = userDefaults.integer(forKey: numOfQuestions)
         if(tempNumberOfQuestions != 0) {
             self.numberOfQuestions = tempNumberOfQuestions
             
         }
         
-        let filepaths =  NSBundle.mainBundle().pathsForResourcesOfType(
-            "txt", inDirectory: nil)
+        let filepaths =  Bundle.main.paths(
+            forResourcesOfType: "txt", inDirectory: nil)
         for filepath in filepaths{
             
             do {
                 let contents = try NSString(contentsOfFile: filepath, usedEncoding: nil) as String
                 
-                let myStrings = contents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+                let myStrings = contents.components(separatedBy: CharacterSet.newlines)
                 
                 for string in myStrings{
                     allQuestions.append(string)
-                    let newString = string.componentsSeparatedByString(":")
+                    let newString = string.components(separatedBy: ":")
                     allQuestionsAnswers[newString[0]] = newString[1];
                 }
                 
@@ -73,11 +73,11 @@ class Model{
         currentLevelQuestions.removeAll()
         
         for question in allQuestions{
-            let difficulty = question.componentsSeparatedByString(":")[2]
-            let temDif = difficulty.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+            let difficulty = question.components(separatedBy: ":")[2]
+            let temDif = difficulty.trimmingCharacters(in: CharacterSet.newlines)
             if let tempVar: Bool = difficultyLevels[temDif]{
                 if(tempVar){
-                    currentLevelQuestions.append(question.componentsSeparatedByString(":")[0])
+                    currentLevelQuestions.append(question.components(separatedBy: ":")[0])
                 }
             }
         }
@@ -112,20 +112,20 @@ class Model{
         return questionSet
     }
     
-    func toggleLevels(name:String){
+    func toggleLevels(_ name:String){
         difficultyLevels[name] = !(difficultyLevels[name]!)
-        NSUserDefaults.standardUserDefaults().setObject(
+        UserDefaults.standard.set(
             difficultyLevels as NSDictionary, forKey: difficultyKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.synchronize()
         questionsInEachLevels()
         
     }
     
-    func changeNumberOfQuestions(value: Int){
+    func changeNumberOfQuestions(_ value: Int){
          self.numberOfQuestions = value
-        NSUserDefaults.standardUserDefaults().setObject(
+        UserDefaults.standard.set(
         numberOfQuestions as Int, forKey: numOfQuestions)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.synchronize()
     }
     
     func notifyDelegate(){
